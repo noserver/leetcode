@@ -107,8 +107,25 @@ class Solution {
      * @return
      */
     public double findMedianSortedArrays(int[] nums1, int[] nums2) {
+        int i1 = 0;
+        int i2 = 0;
+        double res;
         if((nums1.length+nums2.length)%2==0){
             //偶数处理
+            for(int i=0;i<(nums1.length+nums2.length-1)/2;i++){
+                if(nums1[i1]<nums2[i2]){
+                    i1++;
+                }
+                else{
+                    i2++;
+                }
+            }
+            if(nums1[i1]<nums2[i2]){
+                res = nums1[i1];
+            }
+            else{
+                res = nums2[i2];
+            }
         }
         return 0;
     }
